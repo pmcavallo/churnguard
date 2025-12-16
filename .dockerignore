@@ -1,0 +1,33 @@
+# Virtual environment
+venv/
+.venv/
+ENV/
+
+# Jupyter notebooks (not needed in production)
+notebooks/
+*.ipynb
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data files (we'll download fresh or use S3 in production)
+data/*.csv
+
+# Tests (not needed in production image)
+tests/
+
+# Misc
+*.md
+.DS_Store
+Thumbs.db
