@@ -32,12 +32,14 @@ def load_artifacts():
 
 
 def is_model_loaded() -> bool:
-    """Check if model artifacts exist."""
-    return all([
-        os.path.exists(MODEL_PATH),
-        os.path.exists(ENCODERS_PATH),
-        os.path.exists(FEATURE_NAMES_PATH)
-    ])
+    """Check if model artifacts exist or are already loaded in memory."""
+    if _model is not None:
+        return True
+
+    return all(
+        os.path.exists(path)
+        for path in [MODEL_PATH, ENCODERS_PATH, FEATURE_NAMES_PATH]
+    )
 
 
 def predict(customer_data: dict) -> dict:
