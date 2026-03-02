@@ -3,7 +3,6 @@ ChurnGuard API - FastAPI application for churn prediction.
 """
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import Optional
 import sys
 import os
 
